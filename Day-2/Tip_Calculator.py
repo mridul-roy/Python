@@ -6,15 +6,15 @@
 #Tip: There are 2 ways to round a number. You might have to do some Googling to solve this.💪
 
 #Write your code below this line 👇
-print("Welcome to Tip Calculatro")
-bill = input("What was the total bill $ ? ")
-tip = input("How much % of tips would you like to give ? (10%, 12%, 14%) ")
-num_of_people = input("How many person to split the bill ? ")
+print("Welcome to Tip Calculator !!!\n")
+bill = float(input("What was the total bill $ ? ") )
+tip = int(input("How much % of tips would you like to give ? (10%, 12%, 14%) ") )
+num_of_people = int(input("How many person to split the bill ? ") )
 
-bill_for_per_person = int(bill) / int(num_of_people)
+bill_for_per_person = bill / num_of_people
 
-amout_of_tip_per_person = ( int(tip) * bill_for_per_person ) / 100
+amout_of_tip_per_person = (tip * bill_for_per_person ) / 100
 
 total_bill_per_person = bill_for_per_person + amout_of_tip_per_person
 
-print(f"Each person sould pay $ {round(total_bill_per_person, 2)}" )
+print(f"Each person sould pay $ {round(total_bill_per_person, 2 )}" )
