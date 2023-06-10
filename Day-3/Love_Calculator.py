@@ -6,5 +6,8 @@ name2 = input("What is their name? \n")
 
 #Write your code below this line 👇
 
-print("Go here!!!")
+print("Continue From here")
+
+if name1 == "mridul":
+    print("No Chances")
 
