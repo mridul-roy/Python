@@ -12,7 +12,7 @@ position = input("Where do you want to put the treasure? ")
 horizental = int (position[0])
 vartical = int ( position[1])
 
-map [horizental - 1 ] [ vartical - 1 ] = "X"
+map [ vartical - 1 ] [horizental - 1 ] = "X"
 
 
 
