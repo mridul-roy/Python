@@ -28,6 +28,6 @@ random.shuffle(str_var)
 
 # using list comprehension
 listToStr = ''.join(map(str, str_var))
-print(listToStr)
+print(f"Your Password is :{listToStr}")
 
   
