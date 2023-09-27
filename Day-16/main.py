@@ -17,6 +17,7 @@ table.field_names = (["Pokemon_Names", "Types"])
 table.add_row(["Pikachu","Electric"])
 table.add_row(["Squirtle","Water"])
 table.add_row(["Charmandar","Fire"])
+table.add_row(["Anorith","Rock"])
 table.align = "l"
 
 
