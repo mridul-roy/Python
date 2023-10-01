@@ -22,7 +22,7 @@ def color_mode():
 
 
 for _ in range(200):
-    tim.pensize(5)
+    tim.pensize(8)
     tim.forward(25)
     tim.setheading(random.choice(direction))
     # tim.color(random.choice(color_list))
