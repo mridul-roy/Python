@@ -32,3 +32,23 @@ while len(states) < 50:
         t.write(user_answer)
 
 
+"""
+hello,this is totally fun to guess how many states you know about USA.
+
+enter the name of state by saw the map and test your guessing score
+
+to play this game go to this link:
+
+link:https://replit.com/@mridulroy010/US-states-guessing-game?v=1
+
+control:
+you can enter as much as you can guess
+to end of your guessing type "exit"
+then you will saw your score & how many states you missed out.
+
+enjoy. Fell free to feedback.Thank you  
+
+
+
+
+"""
