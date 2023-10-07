@@ -17,10 +17,7 @@ while len(states) < 50:
     user_answer = screen.textinput(title=f"{len(states)}/50 States",
                                    prompt="What is the name of the States?").title()
     if user_answer == "Exit":
-
-        for sts in all_states:
-            if sts not in states:
-                missing_states.append(sts)
+        missing_states = [sts for sts in all_states if not sts in states]
         learn_data = (pandas.DataFrame(missing_states))
         print(learn_data)
         break
