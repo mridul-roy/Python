@@ -30,14 +30,14 @@ while is_game_on:
     snake.move()
 
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        is_game_on = False
-        score_board.game_over()
+        score_board.reset_game()
+        snake.reset()
 
     for segment in snake.segments[1:]:
 
         if snake.head.distance(segment) < 10:
-            is_game_on = False
-            score_board.game_over()
+            score_board.reset_game()
+            snake.reset()
 
     if snake.head.distance(food) < 15:
         food.refresh()
@@ -45,3 +45,25 @@ while is_game_on:
         score_board.increasing_score()
 
 screen.exitonclick()
+
+"""
+hello, this is basic 'classic Snake game'
+to play this game click in this link
+
+Link: https://replit.com/@mridulroy010/Classic-Snake-game?v=1
+
+Constrains:
+
+If hit the wall game over
+If hit on snake body game over
+
+Score:
+Hit the food and get 1 point
+
+game Control :
+use Up (arrow) key to move up
+use Down (arrow) key to move down
+use Left(arrow) key to move Left
+use Right(arrow) key to move Right
+
+"""
