@@ -6,13 +6,19 @@ BACKGROUND_COLOR = "#B1DDC6"
 FRONT_TITLE = ("Arial", 30, "italic")
 FRONT_WORD = ("Arial", 45, "bold")
 pick_word = {}
+word_dict = {}
 
 window = Tk()
 window.title("The Flash Game")
 window.config(padx=50, pady=40, bg=BACKGROUND_COLOR)
 
-data = pandas.read_csv("./data/french_words.csv")
-word_dict = data.to_dict(orient="records")
+try:
+    data = pandas.read_csv("./data/word_to_learn.csv")
+except FileNotFoundError:
+    orginal_data = pandas.read_csv("./data/french_words.csv")
+    word_dict = orginal_data.to_dict(orient="records")
+else:
+    word_dict = data.to_dict(orient="records")
 
 
 def flip_card():
@@ -32,6 +38,14 @@ def word_selection():
     window.after(3000, func=flip_card)
 
 
+def to_learn():
+    word_dict.remove(pick_word)
+    data = pandas.DataFrame(word_dict)
+    data.to_csv("./data/word_to_learn.csv", index=False)
+
+    word_selection()
+
+
 flip_timer = window.after(3000, func=flip_card)
 
 canvas = Canvas(width=800, height=526)
@@ -44,13 +58,13 @@ title_text = canvas.create_text(400, 150, text="", font=FRONT_TITLE)
 word_text = canvas.create_text(400, 263, text="", font=FRONT_WORD)
 canvas.grid(row=0, column=0, columnspan=2)
 
-#button
+# button
 wrong_img = PhotoImage(file="./images/wrong.png")
 btn_wrong = Button(image=wrong_img, highlightthickness=0, command=word_selection)
 btn_wrong.grid(row=1, column=0)
 
 right_img = PhotoImage(file="./images/right.png")
-btn_right = Button(image=right_img, highlightthickness=0, command=word_selection)
+btn_right = Button(image=right_img, highlightthickness=0, command=to_learn)
 btn_right.grid(row=1, column=1)
 
 word_selection()
