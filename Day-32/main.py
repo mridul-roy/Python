@@ -30,7 +30,6 @@ if weekday == 6:
 
 my_email = "arnobroy0007@gmail.com"
 password = "12345678"
-password = "ofjgyhjhphwbcelj"
 
 # Use port 587 for TLS or 465 for SSL
 smtp_server = "smtp.gmail.com"
