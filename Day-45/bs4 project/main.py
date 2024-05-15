@@ -1,19 +1,19 @@
 from bs4 import BeautifulSoup
-import requests
 
-response = requests.get("https://news.ycombinator.com/")
-yc_webpage = response.text
+with open("website.html", encoding="utf8") as file:
+    contents = file.read()
 
-soup = BeautifulSoup(yc_webpage, "html.parser")
+soup = BeautifulSoup(contents, "html.parser")
 
-article_tag = soup.find(name='a', rel='noreferrer')
-print(article_tag.getText())
+# print(soup.title)
+# print(soup.title.string)
+# print(soup.prettify())
 
-# print(soup.find_all('a'))
-
-# with open(file="website.html", encoding="utf8")as file:
-#     contents = file.read()
+# all_anchor_tag = soup.find_all(name="a")
 #
-# soup = BeautifulSoup(contents, "html.parser")
-#
-# print(soup.find_all())
+# for tag in all_anchor_tag :
+#     print(tag.get("href"))
+
+heading = soup.find(name="h3", class_="heading")
+
+print(heading)
